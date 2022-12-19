@@ -19,6 +19,10 @@ const LoginPage = () => {
   // This function is called when the "Login" button is clicked
   function handleSubmit(event) {
     event.preventDefault()
+    if (username.trim().length === 0 && password.trim().length === 0) {
+      alert('Please enter enter your username and password')
+      return
+    }
     if (username === 'admin' && password === 'pass1234') {
       setIsLoggedIn(true)
     }
